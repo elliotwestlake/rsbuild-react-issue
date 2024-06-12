@@ -14,7 +14,10 @@ export default defineConfig({
         new ModuleFederationPlugin({
           name: "shell",
           remotes: {
-            home: "home@http://localhost:3001/mf-manifest.json",
+            home:
+              process.env.VERCEL_ENV === "production"
+                ? "https://rsbuild-multi-versions.vercel.app/mf-manifest.json"
+                : "http://localhost:3001/mf-manifest.json",
           },
           shared: ["react", "react-dom"],
         }),

@@ -10,6 +10,9 @@ export default defineConfig({
   dev: {
     assetPrefix: "http://localhost:3001",
   },
+  output: {
+    assetPrefix: "https://rsbuild-multi-versions.vercel.app",
+  },
   tools: {
     rspack: (config, { appendPlugins }) => {
       config.output!.uniqueName = "home";
