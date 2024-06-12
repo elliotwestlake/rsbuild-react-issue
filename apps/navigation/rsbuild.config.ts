@@ -17,10 +17,10 @@ export default defineConfig({
   },
   tools: {
     rspack: (config, { appendPlugins }) => {
-      config.output!.uniqueName = "navigation";
+      config.output!.uniqueName = "navigation_app";
       appendPlugins([
         new ModuleFederationPlugin({
-          name: "navigation",
+          name: "navigation_app",
           exposes: {
             "./app": "./src/App.tsx",
           },
@@ -29,7 +29,7 @@ export default defineConfig({
               singleton: true,
               requiredVersion: pkg.dependencies.react,
             },
-            "react/jsx-runtime": {
+            "react/jsx-dev-runtime": {
               singleton: true,
               requiredVersion: pkg.dependencies.react,
             },

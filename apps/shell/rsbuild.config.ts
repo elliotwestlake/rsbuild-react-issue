@@ -20,17 +20,17 @@ export default defineConfig({
               process.env.VERCEL_ENV === "production"
                 ? "home@https://rsbuild-multi-versions.vercel.app/mf-manifest.json"
                 : "home@http://localhost:3001/mf-manifest.json",
-            navigation:
+            navigation_app:
               process.env.VERCEL_ENV === "production"
-                ? "navigation@https://rsbuild-multi-versions-navigation.vercel.app/mf-manifest.json"
-                : "navigation@http://localhost:3002/mf-manifest.json",
+                ? "navigation_app@https://rsbuild-multi-versions-navigation.vercel.app/mf-manifest.json"
+                : "navigation_app@http://localhost:3002/mf-manifest.json",
           },
           shared: {
             react: {
               singleton: true,
               requiredVersion: pkg.dependencies.react,
             },
-            "react/jsx-runtime": {
+            "react/jsx-dev-runtime": {
               singleton: true,
               requiredVersion: pkg.dependencies.react,
             },

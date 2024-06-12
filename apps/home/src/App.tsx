@@ -5,7 +5,7 @@ const Navigation = lazy(() => import("navigation/app"));
 const App = () => {
   return (
     <>
-      <Navigation />
+      <Navigation name="Home" />
       <h1 style={{ color: "red" }}>Home</h1>
     </>
   );

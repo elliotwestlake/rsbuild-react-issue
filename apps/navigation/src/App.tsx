@@ -1,12 +1,8 @@
-const App = () => {
+const App = ({ name }: { name: string }) => {
   return (
-    <nav style={{ color: "red" }}>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <h1 style={{ color: "red" }}>{name} Navigation</h1>
+    </>
   );
 };
 
