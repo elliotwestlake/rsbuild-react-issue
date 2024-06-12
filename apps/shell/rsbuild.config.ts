@@ -38,6 +38,10 @@ export default defineConfig({
               singleton: true,
               requiredVersion: pkg.dependencies["react-dom"],
             },
+            "react-router-dom": {
+              singleton: true,
+              requiredVersion: pkg.dependencies["react-router-dom"],
+            },
           },
         }),
       ]);

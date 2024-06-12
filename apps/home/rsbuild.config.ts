@@ -25,10 +25,6 @@ export default defineConfig({
             "./app": "./src/App.tsx",
           },
           remotes: {
-            navigation:
-              process.env.VERCEL_ENV === "production"
-                ? "navigation@https://rsbuild-multi-versions-navigation.vercel.app/mf-manifest.json"
-                : "navigation@http://localhost:3002/mf-manifest.json",
             navigation_app:
               process.env.VERCEL_ENV === "production"
                 ? "navigation_app@https://rsbuild-multi-versions-navigation.vercel.app/mf-manifest.json"
@@ -46,6 +42,10 @@ export default defineConfig({
             "react-dom": {
               singleton: true,
               requiredVersion: pkg.dependencies["react-dom"],
+            },
+            "react-router-dom": {
+              singleton: true,
+              requiredVersion: pkg.dependencies["react-router-dom"],
             },
           },
         }),
