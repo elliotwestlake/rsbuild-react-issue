@@ -11,5 +11,10 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.14.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "@rspack/core": "canary"
+    }
   }
 }
