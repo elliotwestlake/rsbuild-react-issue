@@ -1,3 +1,5 @@
+import { lazy } from "react";
+
 const Navigation = lazy(() => import("navigation/app"));
 
 const App = () => {
