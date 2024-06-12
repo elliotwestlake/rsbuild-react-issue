@@ -24,6 +24,12 @@ export default defineConfig({
           exposes: {
             "./app": "./src/App.tsx",
           },
+          remotes: {
+            navigation:
+              process.env.VERCEL_ENV === "production"
+                ? "navigation@https://rsbuild-multi-versions-navigation.vercel.app/mf-manifest.json"
+                : "navigation@http://localhost:3002/mf-manifest.json",
+          },
           shared: {
             react: {
               singleton: true,

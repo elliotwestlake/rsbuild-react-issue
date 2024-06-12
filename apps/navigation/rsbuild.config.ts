@@ -7,23 +7,22 @@ import pkg from "./package.json";
 export default defineConfig({
   plugins: [pluginReact()],
   server: {
-    port: 3000,
+    port: 3002,
+  },
+  dev: {
+    assetPrefix: "http://localhost:3002",
+  },
+  output: {
+    assetPrefix: "https://rsbuild-multi-versions-navigation.vercel.app",
   },
   tools: {
     rspack: (config, { appendPlugins }) => {
-      config.output!.uniqueName = "shell";
+      config.output!.uniqueName = "navigation";
       appendPlugins([
         new ModuleFederationPlugin({
-          name: "shell",
-          remotes: {
-            home:
-              process.env.VERCEL_ENV === "production"
-                ? "home@https://rsbuild-multi-versions.vercel.app/mf-manifest.json"
-                : "home@http://localhost:3001/mf-manifest.json",
-            navigation:
-              process.env.VERCEL_ENV === "production"
-                ? "navigation@https://rsbuild-multi-versions-navigation.vercel.app/mf-manifest.json"
-                : "navigation@http://localhost:3002/mf-manifest.json",
+          name: "navigation",
+          exposes: {
+            "./app": "./src/App.tsx",
           },
           shared: {
             react: {
