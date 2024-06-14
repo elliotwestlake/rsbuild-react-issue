@@ -4,7 +4,7 @@ const App = ({ name }: { name: string }) => {
   console.log(location.pathname);
   return (
     <>
-      <h1 style={{ color: "red" }}>{name} Navigation</h1>
+      <h1 style={{ color: "red" }}>{name} Navigatio</h1>
     </>
   );
 };

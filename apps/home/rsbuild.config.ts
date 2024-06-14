@@ -35,10 +35,10 @@ export default defineConfig({
               singleton: true,
               requiredVersion: pkg.dependencies.react,
             },
-            // "react/jsx-dev-runtime": {
-            //   singleton: true,
-            //   requiredVersion: pkg.dependencies.react,
-            // },
+            "react/jsx-dev-runtime": {
+              singleton: true,
+              requiredVersion: pkg.dependencies.react,
+            },
             "react-dom": {
               singleton: true,
               requiredVersion: pkg.dependencies["react-dom"],
